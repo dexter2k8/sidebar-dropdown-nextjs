@@ -10,7 +10,7 @@ export const Sidebar = styled.nav<IStyledProps>`
   min-width: ${({ collapsed }) => (collapsed ? sizes.collapsed : sizes.expanded)};
   max-width: ${({ collapsed }) => (collapsed ? sizes.collapsed : sizes.expanded)};
   transition: all 0.3s ease;
-  height: 100vh;
+  height: 100%;
   background: ${colors.background};
   color: ${colors.font};
 
@@ -25,10 +25,10 @@ export const Sidebar = styled.nav<IStyledProps>`
     }
 
     .show figure:last-child {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
     .show ul {
-      max-height: ${({ collapsed }) => (collapsed ? "100vh" : "200px")};
+      max-height: ${({ collapsed }) => (collapsed ? "100%" : "200px")};
     }
 
     li:hover {

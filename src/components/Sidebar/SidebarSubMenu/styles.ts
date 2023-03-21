@@ -7,6 +7,7 @@ interface IStyledProps {
 
 export const StyledSubMenu = styled.li<IStyledProps>`
   position: relative;
+  white-space: nowrap;
 
   a:hover {
     background: ${colors.hover};
@@ -18,14 +19,12 @@ export const StyledSubMenu = styled.li<IStyledProps>`
     min-width: ${sizes.collapsed};
     text-align: center;
     line-height: 65px;
-    transition: all 0.3s ease;
   }
 
   a,
   div {
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
   }
 
   a {
@@ -55,8 +54,10 @@ export const StyledSubMenu = styled.li<IStyledProps>`
           opacity: 0;
           pointer-events: none; 
           max-height: 100vh;       
-          a, span{
-            padding: 10px 30px;            
+          a, span {
+            color: ${colors.font};
+            padding: 10px 30px;
+            white-space: nowrap;           
           }
           `}
     li {

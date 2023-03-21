@@ -1,6 +1,6 @@
 import * as Styled from "./styles";
 import Link from "next/link";
-import ArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 interface ISubMenuProps {
   collapsed: boolean;
@@ -18,7 +18,7 @@ function SubMenu({ collapsed, icon, label, children }: ISubMenuProps) {
           <span>{label}</span>
         </div>
         <figure>
-          <ArrowDownIcon />
+          <ArrowRightIcon />
         </figure>
       </Link>
       <ul>
