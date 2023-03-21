@@ -9,6 +9,6 @@
 
 A HTML-CSS-JS sidebar with dropdown menu made in NextJS
 
-
+![Page layout](https://github.com/dexter2k8/sidebar-dropdown-nextjs/blob/main/public/page.gif)
 
 </p>
