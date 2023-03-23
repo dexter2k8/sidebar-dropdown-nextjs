@@ -2,15 +2,17 @@ import * as Styled from "./styles";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useContext } from "react";
+import { SidebarContext } from "../SidebarContext";
 
 interface ISidebarFooterProps {
-  collapsed: boolean;
   avatar: StaticImageData;
   username: string;
   email: string;
 }
 
-function SidebarFooter({ collapsed, avatar, username, email }: ISidebarFooterProps) {
+function SidebarFooter({ avatar, username, email }: ISidebarFooterProps) {
+  const { collapsed } = useContext(SidebarContext);
   return (
     <Styled.StyledSidebarFooter collapsed={collapsed}>
       <Link href={"#"}>

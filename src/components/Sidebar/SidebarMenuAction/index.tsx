@@ -1,13 +1,10 @@
 import * as Styled from "./styles";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Dispatch, SetStateAction } from "react";
+import { useContext } from "react";
+import { SidebarContext } from "../SidebarContext";
 
-interface ISidebarMenuProps {
-  collapsed: boolean;
-  setCollapsed: Dispatch<SetStateAction<boolean>>;
-}
-
-function SidebarMenuAction({ collapsed, setCollapsed }: ISidebarMenuProps) {
+function SidebarMenuAction() {
+  const { collapsed, setCollapsed } = useContext(SidebarContext);
   return (
     <Styled.StyledMenuAction collapsed={collapsed}>
       <button onClick={() => setCollapsed(!collapsed)}>

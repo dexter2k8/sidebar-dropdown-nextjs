@@ -1,13 +1,15 @@
 import * as Styled from "../SidebarSubMenu/styles";
 import Link from "next/link";
+import { useContext } from "react";
+import { SidebarContext } from "../SidebarContext";
 
 interface IMenuItemProps {
-  collapsed: boolean;
   icon: JSX.Element;
   label: string;
 }
 
-function MenuItem({ collapsed, icon, label }: IMenuItemProps) {
+function MenuItem({ icon, label }: IMenuItemProps) {
+  const { collapsed } = useContext(SidebarContext);
   return (
     <Styled.StyledSubMenu collapsed={collapsed}>
       <Link href={"#"}>
@@ -17,7 +19,11 @@ function MenuItem({ collapsed, icon, label }: IMenuItemProps) {
         </div>
       </Link>
       <ul>
-        <li>{collapsed && <span>{label}</span>}</li>
+        {collapsed && (
+          <li>
+            <span>{label}</span>
+          </li>
+        )}
       </ul>
     </Styled.StyledSubMenu>
   );

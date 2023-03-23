@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { useState } from "react";
 import SidebarHeader from "./SidebarHeader";
 import SidebarFooter from "./SidebarFooter";
 import * as Styled from "./styles";
@@ -9,55 +7,43 @@ import GridViewIcon from "@mui/icons-material/GridView";
 import CollectionsIcon from "@mui/icons-material/CollectionsBookmarkOutlined";
 import DynamicFeedIcon from "@mui/icons-material/DynamicFeed";
 import avatar from "public/profile.jpg";
+
 import SubMenu from "./SidebarSubMenu";
 import MenuItem from "./SidebarMenuItem";
 import SidebarMenuAction from "./SidebarMenuAction";
+import SubItem from "./SubItem";
+import SidebarProvider from "./SidebarContext";
 
 function Sidebar() {
-  const [collapsed, setCollapsed] = useState(true);
   return (
-    <Styled.Sidebar collapsed={collapsed}>
-      <SidebarMenuAction collapsed={collapsed} setCollapsed={setCollapsed} />
-      <SidebarHeader collapsed={collapsed} icon={<ReactIcon />}>
-        CodingBR
-      </SidebarHeader>
+    <SidebarProvider>
+      <Styled.Sidebar>
+        <SidebarMenuAction />
 
-      <ul>
-        <MenuItem collapsed={collapsed} icon={<GridViewIcon />} label={"Dashboard"} />
-        <SubMenu collapsed={collapsed} icon={<CollectionsIcon />} label={"Category"}>
-          <li>
-            <Link href={"#"}>HTML & CSS</Link>
-          </li>
-          <li>
-            <Link href={"#"}>JavaScript</Link>
-          </li>
-          <li>
-            <Link href={"#"}>Python</Link>
-          </li>
-          <li>
-            <Link href={"#"}>Pascal</Link>
-          </li>
-          <li>
-            <Link href={"#"}>Java</Link>
-          </li>
-          <li>
-            <Link href={"#"}>Assembly</Link>
-          </li>
-        </SubMenu>
-        <SubMenu collapsed={collapsed} icon={<DynamicFeedIcon />} label={"Posts"}>
-          <li>
-            <Link href={"#"}>Web Design</Link>
-          </li>
-          <li>
-            <Link href={"#"}>Login Form</Link>
-          </li>
-          <li>
-            <Link href={"#"}>Card Design</Link>
-          </li>
-        </SubMenu>
-      </ul>
-      <SidebarFooter collapsed={collapsed} avatar={avatar} username={"Admin XPTO"} email={"admin@xpto.com"} />
-    </Styled.Sidebar>
+        <SidebarHeader icon={<ReactIcon />}>CodingBR</SidebarHeader>
+
+        <ul>
+          <MenuItem icon={<GridViewIcon />} label={"Dashboard"} />
+
+          <SubMenu icon={<CollectionsIcon />} label={"Category"}>
+            <SubItem>HTML & CSS</SubItem>
+            <SubItem>Javascript</SubItem>
+            <SubItem>Python</SubItem>
+            <SubItem>Pascal</SubItem>
+            <SubItem>Java</SubItem>
+            <SubItem>Assembly</SubItem>
+          </SubMenu>
+
+          <SubMenu icon={<DynamicFeedIcon />} label={"Posts"}>
+            <SubItem>Web Design</SubItem>
+            <SubItem>Login Form</SubItem>
+            <SubItem>Card Design</SubItem>
+          </SubMenu>
+        </ul>
+
+        <SidebarFooter avatar={avatar} username={"Admin XPTO"} email={"admin@xpto.com"} />
+      </Styled.Sidebar>
+    </SidebarProvider>
   );
 }
 

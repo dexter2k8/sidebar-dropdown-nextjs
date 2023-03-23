@@ -9,6 +9,14 @@ export const StyledSubMenu = styled.li<IStyledProps>`
   position: relative;
   white-space: nowrap;
 
+  &.show figure:last-child {
+    transform: rotate(90deg);
+  }
+
+  &.show ul {
+    max-height: ${({ collapsed }) => (collapsed ? "100%" : "200px")};
+  }
+
   a:hover {
     background: ${colors.hover};
     opacity: 1;
@@ -39,15 +47,16 @@ export const StyledSubMenu = styled.li<IStyledProps>`
 
   ul {
     max-height: 0;
+    background: ${colors.dropdown};
     /* *** EXIBIÇÃO DA ABA LATERAL *** */
     ${({ collapsed }) =>
       collapsed &&
       `
           position: absolute;
-          left: calc(100% - 4px);
+          left: 100%;
           top: -10px;
           z-index: 100;
-          background: ${colors.dropdown};
+          background: ${colors.background};
           overflow: hidden;
           border-radius: 8px;
           padding: 10px 0;
@@ -57,21 +66,13 @@ export const StyledSubMenu = styled.li<IStyledProps>`
           a, span {
             color: ${colors.font};
             padding: 10px 30px;
-            white-space: nowrap;           
+            white-space: nowrap;            
           }
           `}
     li {
-      a {
-        padding: ${({ collapsed }) => !collapsed && "5px 80px"};
-        font-size: 15px;
-        white-space: nowrap;
-        opacity: 0.6;
-      }
-      li {
-        span {
-          line-height: 40px;
-          pointer-events: none;
-        }
+      span {
+        line-height: 40px;
+        pointer-events: none;
       }
     }
   }

@@ -1,15 +1,17 @@
 import * as Styled from "./styles";
 import Link from "next/link";
 import ArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useContext } from "react";
+import { SidebarContext } from "../SidebarContext";
 
 interface ISubMenuProps {
-  collapsed: boolean;
   icon: JSX.Element;
   label: string;
   children: React.ReactNode;
 }
 
-function SubMenu({ collapsed, icon, label, children }: ISubMenuProps) {
+function SubMenu({ icon, label, children }: ISubMenuProps) {
+  const { collapsed } = useContext(SidebarContext);
   return (
     <Styled.StyledSubMenu collapsed={collapsed}>
       <Link onClick={(e) => e.currentTarget.parentElement!.classList.toggle("show")} href={"#"}>
@@ -22,7 +24,11 @@ function SubMenu({ collapsed, icon, label, children }: ISubMenuProps) {
         </figure>
       </Link>
       <ul>
-        <li>{collapsed && <span>{label}</span>}</li>
+        {collapsed && (
+          <li>
+            <span>{label}</span>
+          </li>
+        )}
         {children}
       </ul>
     </Styled.StyledSubMenu>
