@@ -2,7 +2,7 @@ import * as Styled from "./styles";
 import Link from "next/link";
 import ArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useContext } from "react";
-import { SidebarContext } from "../SidebarContext";
+import { SidebarContext } from "@/contexts/sidebarContext";
 
 interface ISubMenuProps {
   icon: JSX.Element;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as Styled from "./styles";
 import { useContext } from "react";
-import { SidebarContext } from "../SidebarContext";
+import { SidebarContext } from "@/contexts/sidebarContext";
 
 interface ISidebarMenuProps {
   children: React.ReactNode;

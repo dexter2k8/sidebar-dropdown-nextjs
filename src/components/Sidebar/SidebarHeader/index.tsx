@@ -1,5 +1,5 @@
 import * as Styled from "./styles";
-import { SidebarContext } from "../SidebarContext";
+import { SidebarContext } from "@/contexts/sidebarContext";
 import { useContext } from "react";
 
 interface ISidebarHeaderProps {

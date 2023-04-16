@@ -12,7 +12,7 @@ import SubMenu from "./SidebarSubMenu";
 import MenuItem from "./SidebarMenuItem";
 import SidebarMenuAction from "./SidebarMenuAction";
 import SubItem from "./SubItem";
-import SidebarProvider from "./SidebarContext";
+import SidebarProvider from "@/contexts/sidebarContext";
 
 function Sidebar() {
   return (

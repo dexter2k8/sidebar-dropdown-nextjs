@@ -1,7 +1,7 @@
 import * as Styled from "../SidebarSubMenu/styles";
 import Link from "next/link";
 import { useContext } from "react";
-import { SidebarContext } from "../SidebarContext";
+import { SidebarContext } from "@/contexts/sidebarContext";
 
 interface IMenuItemProps {
   icon: JSX.Element;

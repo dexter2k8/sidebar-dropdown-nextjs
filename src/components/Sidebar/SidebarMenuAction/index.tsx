@@ -1,7 +1,7 @@
 import * as Styled from "./styles";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useContext } from "react";
-import { SidebarContext } from "../SidebarContext";
+import { SidebarContext } from "@/contexts/sidebarContext";
 
 function SidebarMenuAction() {
   const { collapsed, setCollapsed } = useContext(SidebarContext);

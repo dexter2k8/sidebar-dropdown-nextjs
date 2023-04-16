@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useContext } from "react";
-import { SidebarContext } from "../SidebarContext";
+import { SidebarContext } from "@/contexts/sidebarContext";
 
 interface ISidebarFooterProps {
   avatar: StaticImageData;

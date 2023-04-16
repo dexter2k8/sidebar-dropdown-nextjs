@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors, sizes } from "./settings";
 
 import { useContext } from "react";
-import { SidebarContext } from "./SidebarContext";
+import { SidebarContext } from "@/contexts/sidebarContext";
 
 function Width() {
   const { collapsed } = useContext(SidebarContext);
